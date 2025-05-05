@@ -8,5 +8,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'guia-para-molderia-y-sastreria';
+  title = 'Guía para Moldería y Sastrería';
 }
