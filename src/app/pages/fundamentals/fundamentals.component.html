@@ -1,1 +1,20 @@
 <p>fundamentals works!</p>
+
+
+<section class="fundamentals-intro">
+    <div class="container">
+        <h1>Fundamentos de Moldería y Sastrería</h1>
+        <app-desc-card
+            [title]="basicTools.title"
+            [isList]="basicTools.isList"
+            [items]="basicTools.items"
+            [accentColor]="basicTools.accentColor">
+        </app-desc-card>
+        <app-desc-card
+            [title]="measurements.title"
+            [description]="measurements.description"
+            [accentColor]="measurements.accentColor">
+            <app-table [datos]="data"></app-table>
+        </app-desc-card>
+    </div>
+</section>

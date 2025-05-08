@@ -1,0 +1,19 @@
+.fundamentals-intro {
+    margin: 2rem auto;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.card-holder {
+    padding: 0 2rem;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
