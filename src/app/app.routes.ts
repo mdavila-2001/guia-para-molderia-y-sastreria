@@ -12,6 +12,11 @@ export const routes: Routes = [
     title: 'Página de Prueba'
   },
   {
+    path: 'fundamentals',
+    loadComponent: () => import('./pages/fundamentals/fundamentals.component').then(m => m.FundamentalsComponent),
+    title: 'Fundamentos'
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full'

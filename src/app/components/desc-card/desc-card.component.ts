@@ -15,5 +15,5 @@ export class DescCardComponent {
   @Input() details: string = '';
   @Input() isList: boolean = false;
   @Input() items: string[] = [];
-  @Input() accentColor: string = '#536C4B';
+  @Input() accentColor: string = '#007bff';
 }

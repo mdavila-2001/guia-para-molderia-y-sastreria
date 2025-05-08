@@ -12,7 +12,7 @@
         <p class="description">{{ description }}</p>
         <p class="details" *ngIf="details">{{ details }}</p>
       </ng-container>
-      <ul class="item-list" *ngIf="isList">
+      <ul class="item-list" *ngIf="isList" [style.--accent-color]="accentColor">
         <li *ngFor="let item of items">
           <span class="check-icon">✓</span>
           {{ item }}
