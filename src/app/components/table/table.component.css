@@ -11,12 +11,31 @@
   
   th, td {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #dde9d9;
     text-align: center;
   }
   
   th {
-    background-color: #007BFF;
+    background-color: #536C4B;
     color: white;
   }
+
+  .first-column {
+    background-color: #f4f7f3;
+    font-weight: 600;
+    text-align: start;
+    color: #3d4f37;
+  }
   
+  tr:nth-child(even) {
+    background-color: #edf3eb;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+
+  tr:hover {
+    background-color: #dde9d9;
+    transition: background-color 0.2s ease;
+  }

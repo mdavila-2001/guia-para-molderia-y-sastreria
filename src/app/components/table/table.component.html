@@ -11,8 +11,8 @@
       <tbody>
         @for (fila of datos; track fila) {
           <tr>
-            @for (col of columnas; track col) {
-              <td>{{ fila[col] }}</td>
+            @for (col of columnas; track col; let i = $index) {
+              <td [class.first-column]="i === 0">{{ fila[col] }}</td>
             }
           </tr>
         }
