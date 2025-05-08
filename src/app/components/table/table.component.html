@@ -1,18 +1,24 @@
-<div *ngIf="datos.length > 0" class="table-container">
+@if (datos.length > 0) {
+  <div class="table-container">
     <table>
       <thead>
         <tr>
-          <th *ngFor="let col of columnas">{{ col }}</th>
+          @for (col of columnas; track col) {
+            <th>{{ col }}</th>
+          }
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let fila of datos">
-          <td *ngFor="let col of columnas">{{ fila[col] }}</td>
-        </tr>
+        @for (fila of datos; track fila) {
+          <tr>
+            @for (col of columnas; track col) {
+              <td>{{ fila[col] }}</td>
+            }
+          </tr>
+        }
       </tbody>
     </table>
   </div>
-  
-  <div *ngIf="datos.length === 0">
-    No hay datos para mostrar.
-  </div>  
+} @else {
+  <div>No hay datos para mostrar.</div>
+}

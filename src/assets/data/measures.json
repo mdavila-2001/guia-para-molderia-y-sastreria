@@ -1,6 +1,6 @@
 [
     {
-      "medida": "Contorno de busto",
+      "Medida": "Contorno de busto",
       "S": 92,
       "M": 100,
       "L": 108,
@@ -8,7 +8,7 @@
       "XXL": 120
     },
     {
-      "medida": "Contorno de cintura",
+      "Medida": "Contorno de cintura",
       "S": 62,
       "M": 68,
       "L": 78,
@@ -16,7 +16,7 @@
       "XXL": 90
     },
     {
-      "medida": "1er ancho de cadera",
+      "Medida": "1er ancho de cadera",
       "S": 92,
       "M": 100,
       "L": 110,
@@ -24,7 +24,7 @@
       "XXL": 108
     },
     {
-      "medida": "1er alto de cadera",
+      "Medida": "1er alto de cadera",
       "S": 12,
       "M": 12,
       "L": 10,
@@ -32,7 +32,7 @@
       "XXL": 10
     },
     {
-      "medida": "2do ancho de cadera",
+      "Medida": "2do ancho de cadera",
       "S": 96,
       "M": 106,
       "L": 120,
@@ -40,7 +40,7 @@
       "XXL": 138
     },
     {
-      "medida": "2do alto de cadera",
+      "Medida": "2do alto de cadera",
       "S": 25,
       "M": 25,
       "L": 28,
@@ -48,7 +48,7 @@
       "XXL": 28
     },
     {
-      "medida": "Alto de busto",
+      "Medida": "Alto de busto",
       "S": 24,
       "M": 25,
       "L": 28,
@@ -56,7 +56,7 @@
       "XXL": 30
     },
     {
-      "medida": "Talle delantero",
+      "Medida": "Talle delantero",
       "S": 43,
       "M": 44,
       "L": 46,
@@ -64,7 +64,7 @@
       "XXL": 48
     },
     {
-      "medida": "Talle trasero",
+      "Medida": "Talle trasero",
       "S": 41,
       "M": 42,
       "L": 40,
@@ -72,7 +72,7 @@
       "XXL": 40
     },
     {
-      "medida": "Ancho de espalda",
+      "Medida": "Ancho de espalda",
       "S": 36,
       "M": 37,
       "L": 40,
@@ -80,7 +80,7 @@
       "XXL": 46
     },
     {
-      "medida": "Separación de busto",
+      "Medida": "Separación de busto",
       "S": 18,
       "M": 19,
       "L": 21,
@@ -88,7 +88,7 @@
       "XXL": 25
     },
     {
-      "medida": "Alto sisa",
+      "Medida": "Alto sisa",
       "S": 21,
       "M": 21,
       "L": 21,
