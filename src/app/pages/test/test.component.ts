@@ -7,7 +7,7 @@ import { DescCardComponent } from "../../components/desc-card/desc-card.componen
 @Component({
   selector: 'app-test',
   standalone: true,
-  imports: [TableComponent, TipComponent, DescCardComponent],
+  imports: [TableComponent, TipComponent],
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
