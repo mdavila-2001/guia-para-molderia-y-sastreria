@@ -1,0 +1,31 @@
+.tip-container {
+  background-color: #f4f7f3;
+  border-left: 4px solid #536C4B;
+  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 4px rgba(83, 108, 75, 0.1);
+  position: relative;
+  font-style: italic;
+}
+
+.tip-title {
+  color: #3d4f37;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.tip-content {
+  color: #536C4B;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.tip-container:hover {
+  background-color: #edf3eb;
+  transition: background-color 0.2s ease;
+}

@@ -1,0 +1,23 @@
+<div class="desc-card">
+  <div class="desc-card-content">
+    <div class="title-section" [style.--accent-color]="accentColor">
+      <div class="accent-bar"></div>
+      <h3>{{ title }}</h3>
+    </div>
+    <div class="desc-card-image" *ngIf="imageUrl">
+      <img [src]="imageUrl" [alt]="title">
+    </div>
+    <div class="desc-card-text">
+      <ng-container *ngIf="!isList">
+        <p class="description">{{ description }}</p>
+        <p class="details" *ngIf="details">{{ details }}</p>
+      </ng-container>
+      <ul class="item-list" *ngIf="isList">
+        <li *ngFor="let item of items">
+          <span class="check-icon">✓</span>
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

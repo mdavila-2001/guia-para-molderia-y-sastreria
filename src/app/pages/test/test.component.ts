@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { TableComponent } from "../../components/table/table.component";
 import { HttpClient } from '@angular/common/http';
+import { TipComponent } from "../../components/tip/tip.component";
 
 @Component({
   selector: 'app-test',
   standalone: true,
-  imports: [TableComponent],
+  imports: [TableComponent, TipComponent],
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
