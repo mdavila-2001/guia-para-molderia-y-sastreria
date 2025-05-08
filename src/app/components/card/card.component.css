@@ -1,0 +1,38 @@
+.card {
+  text-decoration: none;
+  display: block;
+}
+
+.card-content {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover .card-content {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.card p {
+  color: #4a5568;
+  line-height: 1.625;
+  margin: 0;
+  font-size: 1rem;
+  flex: 1;
+  overflow: hidden;
+}
