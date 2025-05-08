@@ -15,7 +15,7 @@ export class TestComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<any[]>('assets/data/tallas_por_medidas.json').subscribe(res => {
+    this.http.get<any[]>('assets/data/measures.json').subscribe(res => {
       this.data = res;
     });
   }
