@@ -1,0 +1,18 @@
+<div *ngIf="datos.length > 0" class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th *ngFor="let col of columnas">{{ col }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let fila of datos">
+          <td *ngFor="let col of columnas">{{ fila[col] }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div *ngIf="datos.length === 0">
+    No hay datos para mostrar.
+  </div>  
