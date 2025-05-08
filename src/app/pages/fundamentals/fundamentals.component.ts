@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-fundamentals',
   standalone: true,
-  imports: [DescCardComponent, TableComponent],
+  imports: [DescCardComponent, TableComponent, DescCardComponent],
   templateUrl: './fundamentals.component.html',
   styleUrl: './fundamentals.component.css'
 })
