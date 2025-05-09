@@ -22,6 +22,11 @@ export const routes: Routes = [
     title: 'Técnicas'
   },
   {
+    path: 'contacts',
+    loadComponent: () => import('./pages/contacts/contacts.component').then(m => m.ContactsComponent),
+    title: 'Contacto'
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full'
