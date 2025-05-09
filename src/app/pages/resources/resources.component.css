@@ -1,0 +1,35 @@
+.resource-container {
+    padding: 2rem;
+}
+  
+.container {
+    padding: 0 1rem;
+}
+  
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+.subtitle {
+    text-align: center;
+    color: #34495e;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+}
+
+.resource-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #34495e;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
