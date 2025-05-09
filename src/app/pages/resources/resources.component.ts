@@ -9,14 +9,15 @@ import { DescCardComponent } from '../../components/desc-card/desc-card.componen
 })
 export class ResourcesComponent {
   basics = {
-    title: 'Ejemplo con Lista',
+    title: 'Básicas',
     isList: true,
     items: [
       'Cinta métrica profesional',
       'Reglas de patronaje',
       'Tijeras de tela y papel',
-      'Alfileres y agujas'
+      'Alfileres y agujas',
+      'Tiza de sastre'
     ],
-    accentColor: '#2E5090'
+    accentColor: '#536C4B'
   };
 }

@@ -33,3 +33,14 @@ h2 {
     font-size: 1.8rem;
     text-align: center;
 }
+
+.resource-ticket{
+    width: 100%;
+}
+
+.desc-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
