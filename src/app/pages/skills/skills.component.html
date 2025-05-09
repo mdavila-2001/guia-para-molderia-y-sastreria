@@ -1,1 +1,39 @@
-<p>skills works!</p>
+<section class="skills-container">
+    <div class="container">
+        <h1>Técnicas de Sastrería</h1>
+        <p class="subtitle">Aprende métodos avanzados de costura y acabados profesionales para elevar la calidad de tus prendas</p>
+        <div class="skills-grid">
+            <app-desc-card
+                [title]="costurasUniones.title"
+                [isList]="costurasUniones.isList"
+                [items]="costurasUniones.items"
+                [accentColor]="costurasUniones.accentColor">
+            </app-desc-card>
+
+            <app-desc-card
+                [title]="acabadosProfesionales.title"
+                [isList]="acabadosProfesionales.isList"
+                [items]="acabadosProfesionales.items"
+                [accentColor]="acabadosProfesionales.accentColor">
+            </app-desc-card>
+
+            <app-desc-card
+                [title]="tecnicasPlanchado.title"
+                [isList]="tecnicasPlanchado.isList"
+                [items]="tecnicasPlanchado.items"
+                [accentColor]="tecnicasPlanchado.accentColor">
+            </app-desc-card>
+
+            <app-desc-card
+                [title]="detallesOrnamentacion.title"
+                [isList]="detallesOrnamentacion.isList"
+                [items]="detallesOrnamentacion.items"
+                [accentColor]="detallesOrnamentacion.accentColor">
+            </app-desc-card>
+        </div>
+        <app-tip
+            title="Nota" 
+            content="Estas técnicas requieren práctica y paciencia. Te recomendamos practicar cada una en muestras antes de aplicarlas en tus prendas finales. Recuerda siempre hacer una prueba en un retazo de la misma tela que usarás en tu proyecto.">
+        </app-tip>
+    </div>
+</section>
