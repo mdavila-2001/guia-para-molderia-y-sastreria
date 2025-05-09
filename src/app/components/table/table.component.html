@@ -4,7 +4,10 @@
       <thead>
         <tr>
           @for (col of columnas; track col) {
-            <th>{{ col }}</th>
+            <th>
+              <!-- Slot para encabezados personalizados -->
+              <ng-container *ngTemplateOutlet="headerTemplate || defaultHeader; context: { $implicit: col }"></ng-container>
+            </th>
           }
         </tr>
       </thead>
@@ -12,13 +15,28 @@
         @for (fila of datos; track fila) {
           <tr>
             @for (col of columnas; track col; let i = $index) {
-              <td [class.first-column]="i === 0">{{ fila[col] }}</td>
+              <td [class.first-column]="i === 0">
+                <!-- Slot para celdas personalizadas -->
+                <ng-container *ngTemplateOutlet="cellTemplate || defaultCell; context: { $implicit: fila[col], row: fila, column: col }"></ng-container>
+              </td>
             }
           </tr>
         }
       </tbody>
     </table>
+
+    <!-- Templates por defecto -->
+    <ng-template #defaultHeader let-col>
+      {{ col }}
+    </ng-template>
+
+    <ng-template #defaultCell let-value>
+      {{ value }}
+    </ng-template>
   </div>
 } @else {
   <div>No hay datos para mostrar.</div>
 }
+
+<!-- Slot para contenido adicional -->
+<ng-content></ng-content>

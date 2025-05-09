@@ -1,4 +1,11 @@
 <div class="tip-container">
   <h3 class="tip-title">{{ title }}</h3>
-  <p class="tip-content">{{ content }}</p>
+  
+  <!-- Contenido por defecto -->
+  <ng-container *ngIf="!hasCustomContent">
+    <p class="tip-content">{{ content }}</p>
+  </ng-container>
+  
+  <!-- Slot para contenido proyectado -->
+  <ng-content></ng-content>
 </div>

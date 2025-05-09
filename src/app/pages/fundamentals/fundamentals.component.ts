@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { DescCardComponent } from '../../components/desc-card/desc-card.component';
 import { TableComponent } from '../../components/table/table.component';
 import { HttpClient } from '@angular/common/http';
+import { TipComponent } from "../../components/tip/tip.component";
 
 @Component({
   selector: 'app-fundamentals',
   standalone: true,
-  imports: [DescCardComponent, TableComponent, DescCardComponent],
+  imports: [DescCardComponent, TableComponent, TipComponent],
   templateUrl: './fundamentals.component.html',
   styleUrl: './fundamentals.component.css'
 })
