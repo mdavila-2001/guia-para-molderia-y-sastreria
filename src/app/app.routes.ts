@@ -22,6 +22,11 @@ export const routes: Routes = [
     title: 'Técnicas'
   },
   {
+    path: 'resources',
+    loadComponent: () => import('./pages/resources/resources.component').then(m => m.ResourcesComponent),
+    title: 'Recursos y Referencias'
+  },
+  {
     path: 'contacts',
     loadComponent: () => import('./pages/contacts/contacts.component').then(m => m.ContactsComponent),
     title: 'Contacto'
