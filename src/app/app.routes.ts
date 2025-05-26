@@ -17,6 +17,21 @@ export const routes: Routes = [
     title: 'Fundamentos'
   },
   {
+    path: 'skills',
+    loadComponent: () => import('./pages/skills/skills.component').then(m => m.SkillsComponent),
+    title: 'Técnicas'
+  },
+  {
+    path: 'resources',
+    loadComponent: () => import('./pages/resources/resources.component').then(m => m.ResourcesComponent),
+    title: 'Recursos y Referencias'
+  },
+  {
+    path: 'contacts',
+    loadComponent: () => import('./pages/contacts/contacts.component').then(m => m.ContactsComponent),
+    title: 'Contacto'
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full'
