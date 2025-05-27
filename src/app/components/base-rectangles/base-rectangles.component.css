@@ -43,40 +43,30 @@
 /* Estilos para las medidas */
 .vertical {
   position: absolute;
-  left: 40px;
-  top: 50%;
-  transform: translateY(-50%);
+  left: 40%;
+  top: 30%;
+  transform: translateX(-50%);
   color: #333;
   font-weight: bold;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 2px 5px;
-  border-radius: 3px;
 }
 
 .horizontal {
   position: absolute;
-  left: 50%;
-  bottom: -25px;
+  left: 60%;
+  top: 45%;
+  margin-top: 5%;
   transform: translateX(-50%);
   color: #333;
   font-weight: bold;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 2px 5px;
-  border-radius: 3px;
 }
 
 /* Flecha vertical */
 .arrow-vertical {
   position: absolute;
-  left: 30px;
-  top: 10%;
+  left: 20%;
   height: 80%;
-  width: 1px;
-  background-color: #333;
+  width: 2px;
+  background-color: #e53e3e;
 }
 
 .arrow-vertical::after {
@@ -87,19 +77,19 @@
   transform: translateX(-50%);
   width: 0;
   height: 0;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 6px solid #333;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid #e53e3e;
 }
 
 /* Flecha horizontal */
 .arrow-horizontal {
   position: absolute;
-  top: 85%;
-  left: 30px;
-  width: calc(100% - 60px);
-  height: 1px;
-  background-color: #333;
+  top: 45%;
+  left: 30%;
+  width: 50%;
+  height: 2px;
+  background-color: #e53e3e;
 }
 
 .arrow-horizontal::after {
@@ -110,7 +100,7 @@
   transform: translateY(-50%);
   width: 0;
   height: 0;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  border-left: 6px solid #333;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid #e53e3e;
 }
