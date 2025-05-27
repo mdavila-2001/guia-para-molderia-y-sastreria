@@ -31,14 +31,12 @@ export class TestComponent implements OnInit {
   data: any[] = [];
   moldExamples: MoldExample[] = [
     {
-      title: 'Delantero Básico',
+      title: 'Delantero',
       type: 'delantero',
       description: 'Molde delantero con medidas estándar',
       measurements: [
-        { value: 50, position: 'left', label: 'Largo' },
-        { value: 40, position: 'top', label: 'Hombro' },
-        { value: 45, position: 'right', label: 'Sisa' },
-        { value: 60, position: 'bottom', label: 'Bajo' }
+        { value: 43, position: 'top', label: 'Largo', showArrow: true },
+        { value: 23, position: 'right', label: 'Ancho', showArrow: true }
       ]
     },
     {
@@ -46,10 +44,8 @@ export class TestComponent implements OnInit {
       type: 'trasero',
       description: 'Molde trasero con ajuste',
       measurements: [
-        { value: 52, position: 'left', label: 'Largo' },
-        { value: 42, position: 'top', label: 'Hombro' },
-        { value: 47, position: 'right', label: 'Sisa' },
-        { value: 62, position: 'bottom', label: 'Bajo' }
+        { value: 41, position: 'top', label: 'Largo', showArrow: true },
+        { value: 23, position: 'right', label: 'Ancho', showArrow: true }
       ]
     },
     {

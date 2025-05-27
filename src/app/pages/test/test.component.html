@@ -37,20 +37,68 @@
               </div>
             </div>
 
-            <!-- Sección de ejemplos anteriores -->
+            <!-- Sección de rectángulos base -->
             <div class="mt-12">
-              <h2 class="text-2xl font-bold mb-4">Otros Componentes</h2>
-              <app-table [datos]="data"></app-table>
+              <h1 class="text-3xl font-bold text-center mb-8">Rectángulos Base para Moldes</h1>
               
-              <div class="mt-6">
-                <app-tip 
-                  title="Consejo Importante" 
-                  content="Las medidas de contorno se dividen en cuatro partes, mientras que las de altura se utilizan completas.">
-                </app-tip>
+              <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-bold mb-4">Paso 1: Rectángulos Base</h2>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                  <p class="mb-4">Inicialmente haremos dos rectángulos (delantero y trasero):</p>
+                  <ul class="list-disc pl-6 mb-6 space-y-2">
+                    <li>Tomaremos la medida más ancha de cintura para arriba (contorno de busto)</li>
+                    <li>Esta medida la dividimos en cuatro para el ancho de ambos rectángulos</li>
+                    <li>Para la altura nos fijamos en el talle delantero y trasero</li>
+                    <li>Dejamos un margen de 4 a 5 cm que nos sirve para hacer correcciones</li>
+                  </ul>
+                  
+                  <div class="flex justify-center gap-8 my-8">
+                    <!-- Rectángulo delantero -->
+                    <div class="flex flex-col items-center">
+                      <app-base-rectangle 
+                        [title]="moldExamples[0].title"
+                        [type]="moldExamples[0].type"
+                        [measurements]="moldExamples[0].measurements">
+                      </app-base-rectangle>
+                    </div>
+                    
+                    <!-- Rectángulo trasero -->
+                    <div class="flex flex-col items-center mt-8">
+                      <app-base-rectangle 
+                        [title]="moldExamples[1].title"
+                        [type]="moldExamples[1].type"
+                        [measurements]="moldExamples[1].measurements">
+                      </app-base-rectangle>
+                    </div>
+                  </div>
+                  
+                  <div class="max-w-md mx-auto my-8">
+                    <app-table [datos]="[
+                      ['Medida', 'Valor (cm)'],
+                      ['Contorno de busto', '92'],
+                      ['Talle delantero', '43'],
+                      ['Talle trasero', '41']
+                    ]"></app-table>
+                    
+                    <div class="flex items-center justify-center mt-4 text-lg">
+                      <div class="flex flex-col items-center mx-2">
+                        <span class="border-b border-gray-400 px-2">92</span>
+                        <span class="px-2">4</span>
+                      </div>
+                      <span class="mx-2">=</span>
+                      <span class="font-bold">23cm</span>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+                    <p class="text-yellow-800">
+                      <strong>Ojo:</strong> La cintura <span class="underline">se debe mantener paralela en ambos moldes</span> y para eso agarramos <span class="underline">el talle más largo para la línea central (43 cm)</span> de la cintura y ya hecho esto a agarramos la cuarta parte de nuestro contorno (23 cm) y trazamos el ancho. Ahora sí trazamos el ancho de ambos rectángulos, pero antes <span class="underline">nos fijamos qué cada rectángulo tanto el que va a ser el trasero como el delantero tenga sus medidas correspondientes en altura (o sea, las del talle delantero y el talle trasero)</span>.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
       </div>
       <!-- <div class="component-card">
         <h3>Tarjetas Descriptivas</h3>
