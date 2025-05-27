@@ -1,0 +1,86 @@
+<div class="base-pattern-page">
+  <header class="page-header">
+    <h1>Molde Base</h1>
+  </header>
+
+  <section class="pattern-overview">
+    <div class="container">
+      <h2>Vista General del Molde Base</h2>
+      <div class="pattern-preview">
+        <div class="rectangles-container">
+          <div class="rectangle-wrapper">
+            <app-base-rectangles [rectangle]="frontRectangle"></app-base-rectangles>
+          </div>
+          <div class="rectangle-wrapper">
+            <app-base-rectangles [rectangle]="backRectangle"></app-base-rectangles>
+          </div>
+        </div>
+        <div class="pattern-notes">
+          <app-tip type="info">
+            <p>Las medidas mostradas son referenciales. Ajusta según tus propias medidas.</p>
+          </app-tip>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="measurements-section">
+    <div class="container">
+      <h2>Tabla de Medidas</h2>
+      <div class="table-container">
+        <app-table 
+          [data]="measurementsData" 
+          [config]="tableConfig"
+          class="measurements-table">
+          <ng-template #cellTemplate let-value="$implicit" let-row="row" let-column="column">
+            <span [class.measure-value]="column === 'valor'" [class.measure-type]="column === 'tipo'">
+              {{ value }}
+            </span>
+          </ng-template>
+        </app-table>
+      </div>
+      <div class="measurement-tips">
+        <app-tip type="warning">
+          <h3>Consejos para tomar medidas</h3>
+          <ul>
+            <li>Toma las medidas sobre el cuerpo con una cinta métrica flexible</li>
+            <li>Mantén la cinta paralela al suelo para medidas horizontales</li>
+            <li>No aprietes demasiado la cinta al medir</li>
+            <li>Usa ropa ajustada o ropa interior para mayor precisión</li>
+          </ul>
+        </app-tip>
+      </div>
+    </div>
+  </section>
+
+  <section class="instructions-section">
+    <div class="container">
+      <h2>Instrucciones para Crear el Molde Base</h2>
+      <ol class="instructions-list">
+        <li *ngFor="let step of instructions">{{ step }}</li>
+      </ol>
+      
+      <div class="additional-tips">
+        <h3>Consejos Adicionales</h3>
+        <div class="tips-grid">
+          <app-tip>
+            <h4>Materiales Necesarios</h4>
+            <ul>
+              <li>Papel de patronaje</li>
+              <li>Regla curva de sastre</li>
+              <li>Escuadra</li>
+              <li>Lápiz y goma</li>
+              <li>Cinta métrica</li>
+            </ul>
+          </app-tip>
+          
+          <app-tip type="success">
+            <h4>Verificación del Patrón</h4>
+            <p>Antes de cortar la tela, haz una prueba en tela económica para verificar el ajuste.</p>
+          </app-tip>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

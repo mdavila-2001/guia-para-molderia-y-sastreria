@@ -1,0 +1,13 @@
+<div class="rectangle-container">
+  <div class="title-container">
+    <p>{{ rectangle.label }}</p>
+  </div>
+  <div class="rectangle" [ngStyle]="{ width: rectangle.width + 'px', height: rectangle.height + 'px' }">
+    <div class="measurements">
+      <span class="vertical">{{ rectangle.verticalMeasure }}</span>
+      <span class="horizontal">{{ rectangle.horizontalMeasure }}</span>
+      <div class="arrow-vertical"></div>
+      <div class="arrow-horizontal"></div>
+    </div>
+  </div>
+</div>

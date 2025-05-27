@@ -2,149 +2,72 @@
   <h1>Área de Pruebas de Componentes</h1>
   
   <div class="test-section">
-    <h2>Componentes de Interfaz</h2>
-    <div class="component-grid">
+    <h2>Rectángulos Base</h2>
+    <div class="component-grid gap-4">
+      <!-- Componente Base Rectangle -->
+      <div class="component-card">
+        <h3>Rectángulos Base de Molde</h3>
+        <div class="component-preview">
+          <div class="base-rectangles">
+            <div class="rectangle-wrapper">
+              <app-base-rectangles [rectangle]="frontRectangle"></app-base-rectangles>
+            </div>
+            <div class="rectangle-wrapper">
+              <app-base-rectangles [rectangle]="backRectangle"></app-base-rectangles>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <!-- Tabla de Medidas -->
+      <div class="component-card">
+        <h3>Tabla de Medidas</h3>
+        <div class="component-preview">
+          <app-table 
+            [data]="data" 
+            [config]="tableConfig"
+            class="w-full"
+          >
+            <ng-template #cellTemplate let-value="$implicit" let-row="row" let-column="column">
+              <span [class.font-bold]="column === 'medida'" [class.text-blue-600]="column === 'valor'">
+                {{ value }}
+              </span>
+            </ng-template>
+          </app-table>
+        </div>
+      </div>
+
+      <!-- Consejos -->
+      <div class="component-card">
+        <h3>Consejos Importantes</h3>
+        <div class="component-preview">
+          <app-tip>
+            <p>Recuerda siempre verificar las medidas antes de cortar la tela.</p>
+          </app-tip>
+          <app-tip type="warning">
+            <p>Las medidas mostradas son referenciales. Ajusta según sea necesario.</p>
+          </app-tip>
+        </div>
+      </div>
+
+      <!-- Lista de Moldes -->
       <div class="component-card">
         <h3>Ejemplos de Moldes</h3>
         <div class="component-preview">
-          <div class="container mx-auto p-4">
-            <h1 class="text-3xl font-bold mb-6">Ejemplos de Moldes</h1>
-            
-            <!-- Sección de moldes -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              <div *ngFor="let example of moldExamples" 
-                   class="bg-white rounded-lg shadow-md p-4 border border-gray-200">
-                <h3 class="text-xl font-semibold mb-2">{{ example.title }}</h3>
-                <p class="text-gray-600 mb-4">{{ example.description }}</p>
-                
-                <div class="flex justify-center mb-4">
-                  <app-base-rectangle
-                    [type]="example.type"
-                    [title]="example.title"
-                    [measurements]="example.measurements"
-                    class="mx-auto">
-                  </app-base-rectangle>
-                </div>
-                
-                <div class="mt-4 text-sm text-gray-500">
-                  <h4 class="font-medium mb-2">Medidas (cm):</h4>
-                  <ul class="space-y-1">
-                    <li *ngFor="let measure of example.measurements">
-                      {{ measure.label || 'Medida' }}: {{ measure.value }}cm
-                    </li>
-                  </ul>
-                </div>
-              </div>
+          <div class="p-4">
+            <div *ngFor="let example of moldExamples" class="mb-4 p-3 border rounded">
+              <h4 class="font-bold">{{ example.title }}</h4>
+              <p>{{ example.description }}</p>
+              <ul class="list-disc pl-5 mt-2">
+                <li *ngFor="let measure of example.measurements">
+                  {{ measure.label }}: {{ measure.value }}cm
+                </li>
+              </ul>
             </div>
-
-            <!-- Sección de rectángulos base -->
-            <div class="mt-12">
-              <h1 class="text-3xl font-bold text-center mb-8">Rectángulos Base para Moldes</h1>
-              
-              <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-                <h2 class="text-2xl font-bold mb-4">Paso 1: Rectángulos Base</h2>
-                
-                <div class="bg-gray-50 p-6 rounded-lg">
-                  <p class="mb-4">Inicialmente haremos dos rectángulos (delantero y trasero):</p>
-                  <ul class="list-disc pl-6 mb-6 space-y-2">
-                    <li>Tomaremos la medida más ancha de cintura para arriba (contorno de busto)</li>
-                    <li>Esta medida la dividimos en cuatro para el ancho de ambos rectángulos</li>
-                    <li>Para la altura nos fijamos en el talle delantero y trasero</li>
-                    <li>Dejamos un margen de 4 a 5 cm que nos sirve para hacer correcciones</li>
-                  </ul>
-                  
-                  <div class="flex justify-center gap-8 my-8">
-                    <!-- Rectángulo delantero -->
-                    <div class="flex flex-col items-center">
-                      <app-base-rectangle 
-                        [title]="moldExamples[0].title"
-                        [type]="moldExamples[0].type"
-                        [measurements]="moldExamples[0].measurements">
-                      </app-base-rectangle>
-                    </div>
-                    
-                    <!-- Rectángulo trasero -->
-                    <div class="flex flex-col items-center mt-8">
-                      <app-base-rectangle 
-                        [title]="moldExamples[1].title"
-                        [type]="moldExamples[1].type"
-                        [measurements]="moldExamples[1].measurements">
-                      </app-base-rectangle>
-                    </div>
-                  </div>
-                  
-                  <div class="max-w-md mx-auto my-8">
-                    <app-table [datos]="[
-                      ['Medida', 'Valor (cm)'],
-                      ['Contorno de busto', '92'],
-                      ['Talle delantero', '43'],
-                      ['Talle trasero', '41']
-                    ]"></app-table>
-                    
-                    <div class="flex items-center justify-center mt-4 text-lg">
-                      <div class="flex flex-col items-center mx-2">
-                        <span class="border-b border-gray-400 px-2">92</span>
-                        <span class="px-2">4</span>
-                      </div>
-                      <span class="mx-2">=</span>
-                      <span class="font-bold">23cm</span>
-                    </div>
-                  </div>
-                  
-                  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
-                    <p class="text-yellow-800">
-                      <strong>Ojo:</strong> La cintura <span class="underline">se debe mantener paralela en ambos moldes</span> y para eso agarramos <span class="underline">el talle más largo para la línea central (43 cm)</span> de la cintura y ya hecho esto a agarramos la cuarta parte de nuestro contorno (23 cm) y trazamos el ancho. Ahora sí trazamos el ancho de ambos rectángulos, pero antes <span class="underline">nos fijamos qué cada rectángulo tanto el que va a ser el trasero como el delantero tenga sus medidas correspondientes en altura (o sea, las del talle delantero y el talle trasero)</span>.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          </div>
+        </div>
       </div>
-      <!-- <div class="component-card">
-        <h3>Tarjetas Descriptivas</h3>
-        <div class="component-preview">
-          <app-desc-card
-            [title]="cardExample1.title"
-            [description]="cardExample1.description"
-            [accentColor]="cardExample1.accentColor">
-          </app-desc-card>
-
-          <app-desc-card
-            [title]="cardExample2.title"
-            [description]="cardExample2.description"
-            [imageUrl]="cardExample2.imageUrl"
-            [details]="cardExample2.details"
-            [accentColor]="cardExample2.accentColor">
-          </app-desc-card>
-
-          <app-desc-card
-            [title]="cardExample3.title"
-            [isList]="cardExample3.isList"
-            [items]="cardExample3.items"
-            [accentColor]="cardExample3.accentColor">
-          </app-desc-card>
-        </div>
-      </div> -->
-
-        <!-- <div class="component-card">
-          <h3>Botones</h3>
-          <div class="component-preview">
-            <button class="btn btn-primary">Botón Primario</button>
-            <button class="btn btn-secondary">Botón Secundario</button>
-          </div>
-        </div>
-
-        <div class="component-card">
-          <h3>Formularios</h3>
-          <div class="component-preview">
-            <form class="preview-form">
-              <div class="form-group">
-                <label>Campo de Ejemplo</label>
-                <input type="text" placeholder="Texto de prueba">
-              </div>
-            </form>
-          </div>
-        </div> -->
     </div>
   </div>
 </div>

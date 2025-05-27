@@ -1,0 +1,186 @@
+/* Estilos generales de la página */
+.base-pattern-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: #333;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Estilos del encabezado */
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #4a5568;
+  margin: 0;
+}
+
+/* Sección de vista general */
+.pattern-overview {
+  margin-bottom: 4rem;
+}
+
+.pattern-preview {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+.rectangles-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Alinea los elementos por la parte inferior */
+  gap: 4rem; /* Aumenta el espacio entre los rectángulos */
+  margin: 2rem 0;
+  width: 100%;
+  min-height: 400px; /* Altura mínima para asegurar espacio suficiente */
+}
+
+.rectangle-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2rem;
+  position: relative;
+}
+
+/* Asegura que el rectángulo izquierdo sea 2cm más alto */
+.rectangle-wrapper:first-child .rectangle {
+  height: 320px; /* 300px + 20px (2cm aprox) */
+}
+
+.rectangle-wrapper:last-child .rectangle {
+  height: 300px;
+}
+
+.pattern-notes {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Sección de medidas */
+.measurements-section {
+  margin-bottom: 4rem;
+}
+
+.table-container {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.measurements-table {
+  width: 100%;
+  min-width: 600px;
+}
+
+.measure-value {
+  font-weight: 600;
+  color: #2b6cb0;
+}
+
+.measure-type {
+  font-size: 0.875rem;
+  color: #718096;
+  background-color: #f7fafc;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+}
+
+.measurement-tips {
+  margin-top: 2rem;
+}
+
+/* Sección de instrucciones */
+.instructions-section {
+  margin-bottom: 4rem;
+}
+
+.instructions-list {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  margin: 1.5rem 0;
+  counter-reset: step-counter;
+}
+
+.instructions-list li {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  counter-increment: step-counter;
+}
+
+.instructions-list li:before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #4299e1;
+  color: white;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.additional-tips {
+  margin-top: 3rem;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .rectangles-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+}

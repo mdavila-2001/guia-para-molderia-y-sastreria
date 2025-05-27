@@ -1,20 +1,28 @@
 .test-page {
-  padding: 2rem;
-  max-width: 1200px;
+  padding: 1.5rem;
+  max-width: 1400px;
   margin: 0 auto;
+  background-color: #f8fafc;
+  min-height: 100vh;
 }
 
 h1 {
-  color: #2c3e50;
+  color: #1a365d;
   margin-bottom: 2rem;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
 }
 
 h2 {
-  color: #34495e;
+  color: #2d3748;
   margin-bottom: 1.5rem;
-  font-size: 1.8rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
 }
 
 h3 {
@@ -25,18 +33,54 @@ h3 {
 
 .test-section {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2.5rem;
+  border: 1px solid #e2e8f0;
 }
 
 /* Estilos para los rectángulos base */
 .base-rectangles {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 2rem;
-  margin: 2rem 0;
+  align-items: flex-start;
+  gap: 4rem;
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+  width: 100%;
+  min-height: 400px;
+}
+
+/* Contenedor de cada rectángulo */
+.rectangle-wrapper {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+/* Estilos para el contenedor del rectángulo */
+.rectangle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .base-rectangles {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .rectangle-wrapper {
+    margin: 1rem 0;
+  }
 }
 
 .rectangle-container {
@@ -83,22 +127,51 @@ h3 {
 /* Estilos existentes */
 .component-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  padding: 0.5rem;
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .component-card {
-  background: #f8f9fa;
-  border-radius: 8px;
+  background: #ffffff;
+  border-radius: 10px;
   padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  h3 {
+    color: #1a365d;
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e2e8f0;
+  }
 }
 
 .component-preview {
-  margin-top: 1rem;
-  padding: 1rem;
-  background: #ffffff;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
+  background: transparent;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   border-radius: 6px;
   border: 1px solid #dee2e6;
 }

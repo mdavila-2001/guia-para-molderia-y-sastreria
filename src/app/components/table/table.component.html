@@ -1,9 +1,21 @@
-@if (datos.length > 0) {
+@if (error) {
+  <div class="error-message">
+    <p>{{ error }}</p>
+  </div>
+} @else if (loading) {
+  <div class="loading-message">
+    <p>Cargando datos...</p>
+  </div>
+} @else if (data.length === 0) {
+  <div class="no-data-message">
+    <p>No hay datos para mostrar.</p>
+  </div>
+} @else {
   <div class="table-container">
     <table>
       <thead>
         <tr>
-          @for (col of columnas; track col) {
+          @for (col of columns; track col) {
             <th>
               <!-- Slot para encabezados personalizados -->
               <ng-container *ngTemplateOutlet="headerTemplate || defaultHeader; context: { $implicit: col }"></ng-container>
@@ -12,31 +24,29 @@
         </tr>
       </thead>
       <tbody>
-        @for (fila of datos; track fila) {
+        @for (row of data; track trackByIndex($index); let i = $index) {
           <tr>
-            @for (col of columnas; track col; let i = $index) {
-              <td [class.first-column]="i === 0">
+            @for (col of columns; track col; let colIndex = $index) {
+              <td [class.first-column]="colIndex === 0">
                 <!-- Slot para celdas personalizadas -->
-                <ng-container *ngTemplateOutlet="cellTemplate || defaultCell; context: { $implicit: fila[col], row: fila, column: col }"></ng-container>
+                <ng-container *ngTemplateOutlet="cellTemplate || defaultCell; context: { $implicit: getRowValue(row, col), row: row, column: col }"></ng-container>
               </td>
             }
           </tr>
         }
       </tbody>
     </table>
-
-    <!-- Templates por defecto -->
-    <ng-template #defaultHeader let-col>
-      {{ col }}
-    </ng-template>
-
-    <ng-template #defaultCell let-value>
-      {{ value }}
-    </ng-template>
   </div>
-} @else {
-  <div>No hay datos para mostrar.</div>
 }
+
+<!-- Templates por defecto -->
+<ng-template #defaultHeader let-col>
+  {{ col }}
+</ng-template>
+
+<ng-template #defaultCell let-value>
+  {{ value }}
+</ng-template>
 
 <!-- Slot para contenido adicional -->
 <ng-content></ng-content>
