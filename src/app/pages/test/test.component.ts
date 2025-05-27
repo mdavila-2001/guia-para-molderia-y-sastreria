@@ -1,18 +1,89 @@
 import { Component, OnInit } from '@angular/core';
-import { TableComponent } from "../../components/table/table.component";
+import { CommonModule, NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { TableComponent } from "../../components/table/table.component";
 import { TipComponent } from "../../components/tip/tip.component";
 import { DescCardComponent } from "../../components/desc-card/desc-card.component";
+import { BaseRectangleComponent, RectangleMeasurement } from "../../components/base-rectangle/base-rectangle.component";
+
+interface MoldExample {
+  title: string;
+  type: 'delantero' | 'trasero' | 'manga' | 'falda' | 'pantalon';
+  measurements: RectangleMeasurement[];
+  description: string;
+}
 
 @Component({
   selector: 'app-test',
   standalone: true,
-  imports: [TableComponent, TipComponent],
+  imports: [
+    CommonModule,
+    NgFor,
+    TableComponent, 
+    TipComponent, 
+    BaseRectangleComponent,
+    //DescCardComponent
+  ],
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
   data: any[] = [];
+  moldExamples: MoldExample[] = [
+    {
+      title: 'Delantero Básico',
+      type: 'delantero',
+      description: 'Molde delantero con medidas estándar',
+      measurements: [
+        { value: 50, position: 'left', label: 'Largo' },
+        { value: 40, position: 'top', label: 'Hombro' },
+        { value: 45, position: 'right', label: 'Sisa' },
+        { value: 60, position: 'bottom', label: 'Bajo' }
+      ]
+    },
+    {
+      title: 'Trasero',
+      type: 'trasero',
+      description: 'Molde trasero con ajuste',
+      measurements: [
+        { value: 52, position: 'left', label: 'Largo' },
+        { value: 42, position: 'top', label: 'Hombro' },
+        { value: 47, position: 'right', label: 'Sisa' },
+        { value: 62, position: 'bottom', label: 'Bajo' }
+      ]
+    },
+    {
+      title: 'Manga Larga',
+      type: 'manga',
+      description: 'Manga larga con ajuste en puño',
+      measurements: [
+        { value: 55, position: 'left', label: 'Largo' },
+        { value: 25, position: 'top', label: 'Ancho' },
+        { value: 20, position: 'bottom', label: 'Puño' }
+      ]
+    },
+    {
+      title: 'Falda Recta',
+      type: 'falda',
+      description: 'Falda recta con abertura',
+      measurements: [
+        { value: 60, position: 'left', label: 'Largo' },
+        { value: 45, position: 'top', label: 'Cintura' },
+        { value: 50, position: 'bottom', label: 'Bajo' }
+      ]
+    },
+    {
+      title: 'Pantalón Clásico',
+      type: 'pantalon',
+      description: 'Pantalón clásico con pinzas',
+      measurements: [
+        { value: 100, position: 'left', label: 'Largo' },
+        { value: 45, position: 'top', label: 'Cintura' },
+        { value: 25, position: 'right', label: 'Rodilla' },
+        { value: 22, position: 'bottom', label: 'Bajo' }
+      ]
+    }
+  ];
 
   // Ejemplos de desc-card
   cardExample1 = {

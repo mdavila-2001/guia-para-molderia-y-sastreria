@@ -1,0 +1,24 @@
+<div class="rectangle-container">
+  <h3 class="title" *ngIf="title">{{ title }}</h3>
+  
+  <div class="rectangle" [ngClass]="type">
+    <!-- Contenido personalizado -->
+    <ng-content></ng-content>
+    
+    <!-- Medidas -->
+    <div *ngFor="let measure of measurements; let i = index" 
+         class="measure" 
+         [style.top]="measure.position === 'top' ? '0' : measure.offsetY"
+         [style.bottom]="measure.position === 'bottom' ? '0' : undefined"
+         [style.left]="measure.position === 'left' ? '0' : measure.offsetX"
+         [style.right]="measure.position === 'right' ? '0' : undefined"
+         [style.transform]="getTransform(measure.position)">
+      {{ measure.value }}{{ unit }}
+      
+      <!-- Etiqueta opcional -->
+      <span *ngIf="measure.label" class="measure-label">
+        {{ measure.label }}
+      </span>
+    </div>
+  </div>
+</div>

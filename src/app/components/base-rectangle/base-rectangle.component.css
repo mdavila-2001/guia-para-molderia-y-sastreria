@@ -1,0 +1,62 @@
+.rectangle {
+  position: relative;
+  background-color: #fff8dc;
+  border: 2px solid #2d3748;
+  box-sizing: border-box;
+  margin: 1rem;
+}
+
+.rectangle-container {
+  display: inline-block;
+  margin: 1rem;
+}
+
+.title {
+  text-align: center;
+  margin: 0.5rem 0;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.measure {
+  position: absolute;
+  font-size: 0.8rem;
+  color: #2d3748;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* Tamaños por defecto */
+.delantero {
+  width: 180px;
+  height: 300px;
+}
+
+.trasero {
+  width: 180px;
+  height: 280px;
+}
+
+.manga {
+  width: 120px;
+  height: 400px;
+}
+
+/* Estilos para posicionamiento de medidas */
+.measure[style*="top:0"] {
+  top: -1.5rem !important;
+}
+
+.measure[style*="bottom:0"] {
+  bottom: -1.5rem !important;
+}
+
+.measure[style*="left:0"] {
+  left: -0.5rem !important;
+}
+
+.measure[style*="right:0"] {
+  right: -0.5rem !important;
+}
