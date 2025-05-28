@@ -3,27 +3,34 @@
     <h1>Molde Base</h1>
   </header>
 
-  <section class="pattern-overview">
-    <div class="container">
-      <h2>Vista General del Molde Base</h2>
-      <div class="pattern-preview">
-        <div class="rectangles-container">
-          <div class="rectangle-wrapper">
-            <app-base-rectangles [rectangle]="frontRectangle"></app-base-rectangles>
+  <section class="step">
+    <h2>Paso 1: Rectángulos Base</h2>
+    <div class="step-content">
+      <p>Inicialmente haremos dos rectángulos (delantero y trasero):</p>
+      <ul class="instructions">
+        <li>Tomaremos la medida más ancha de cintura para arriba (contorno de busto)</li>
+        <li>Esta medida la dividimos en cuatro para el ancho de ambos rectángulos</li>
+        <li>Para la altura nos fijamos en el talle delantero y trasero</li>
+        <li>Dejamos un margen de 4 a 5 cm que nos sirve para hacer correcciones</li>
+      </ul>
+      
+      <div class="base-rectangles">
+        <div class="rectangle-container" *ngFor="let rect of [frontRectangle, backRectangle]">
+          <div class="title-container">
+            <p>{{ rect.label }}</p>
           </div>
-          <div class="rectangle-wrapper">
-            <app-base-rectangles [rectangle]="backRectangle"></app-base-rectangles>
+          <div class="rectangle">
+            <div class="measurements">
+              <span class="vertical">{{ rect.verticalMeasure }}</span>
+              <span class="horizontal">{{ rect.horizontalMeasure }}</span>
+              <div class="arrow-vertical"></div>
+              <div class="arrow-horizontal"></div>
+            </div>
           </div>
-        </div>
-        <div class="pattern-notes">
-          <app-tip type="info">
-            <p>Las medidas mostradas son referenciales. Ajusta según tus propias medidas.</p>
-          </app-tip>
         </div>
       </div>
     </div>
   </section>
-
 
   <section class="measurements-section">
     <div class="container">

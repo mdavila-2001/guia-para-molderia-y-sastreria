@@ -1,29 +1,89 @@
 <div class="test-page">
-  <h1>Área de Pruebas de Componentes</h1>
+  <h1 class="title">Área de Pruebas de Componentes</h1>
   
   <div class="test-section">
-    <h2>Rectángulos Base</h2>
     <div class="component-grid gap-4">
-      <!-- Componente Base Rectangle -->
-      <div class="component-card">
-        <h3>Rectángulos Base de Molde</h3>
-        <div class="component-preview">
-          <div class="base-rectangles">
-            <div class="rectangle-wrapper">
-              <app-base-rectangles [rectangle]="frontRectangle"></app-base-rectangles>
+
+      <!-- Rectángulos Base -->
+      <div class="step">
+        <h3>Paso 1: Rectángulos Base</h3>
+        <div class="stepContent">
+          <p>Inicialmente haremos dos rectángulos (delantero y trasero):</p>
+          <ul class="instructions">
+            <li>Tomaremos la medida más ancha de cintura para arriba (contorno de busto)</li>
+            <li>Esta medida la dividimos en cuatro para el ancho de ambos rectángulos</li>
+            <li>Para la altura nos fijamos en el talle delantero y trasero</li>
+            <li>Dejamos un margen de 4 a 5 cm que nos sirve para hacer correcciones</li>
+          </ul>
+          
+            <div class="version-controls">
+              <button (click)="currentVersionIndex = (currentVersionIndex - 1 + rectangleVersions.length) % rectangleVersions.length" class="control-button">
+                ←
+              </button>
+              <h4 class="version-title">{{ currentVersion.title }}</h4>
+              <button (click)="currentVersionIndex = (currentVersionIndex + 1) % rectangleVersions.length" class="control-button">
+                →
+              </button>
             </div>
-            <div class="rectangle-wrapper">
-              <app-base-rectangles [rectangle]="backRectangle"></app-base-rectangles>
+
+            <div class="baseRectangles">
+              <div class="rectangle-container" *ngFor="let rect of currentVersion.rectangles">
+                <div class="titleContainer">
+                  <p>{{ rect.label }}</p>
+                </div>
+                <div class="rectangle">
+                  <ng-container [ngSwitch]="rect.type">
+                    <!-- Rectángulo básico con medidas -->
+                    <div class="measurements" *ngSwitchCase="'basic'">
+                      <ng-container *ngTemplateOutlet="basicMeasurements; context: { $implicit: rect }">
+                      </ng-container>
+                    </div>
+
+                    <!-- Rectángulo con puntos, líneas y medidas para cuello -->
+                    <div class="measurements" *ngSwitchCase="'neck'">
+                      <ng-container *ngTemplateOutlet="neckMeasurements; context: { $implicit: rect }">
+                      </ng-container>
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
             </div>
-          </div>
+
+            <!-- Template para rectángulos básicos -->
+            <ng-template #basicMeasurements let-rect>
+              <span class="vertical">{{ rect.verticalMeasure }}</span>
+              <span class="horizontal">{{ rect.horizontalMeasure }}</span>
+              <div class="arrowVertical"></div>
+              <div class="arrowHorizontal"></div>
+            </ng-template>
+
+            <!-- Template para rectángulos con medidas de cuello -->
+            <ng-template #neckMeasurements let-rect>
+              <div *ngFor="let point of rect.points" 
+                   class="point" 
+                   [attr.data-type]="point.type"
+                   [style.left.px]="point.position.x"
+                   [style.top.px]="point.position.y">
+              </div>
+              <div *ngFor="let line of rect.lines" 
+                   class="line" 
+                   [attr.data-type]="line.type"
+                   [style.left.px]="line.start.x"
+                   [style.top.px]="line.start.y">
+              </div>
+              <span *ngFor="let measure of rect.measures" 
+                    class="measureLabel"
+                    [attr.data-type]="measure.type">
+                {{ measure.value }}
+              </span>
+            </ng-template>
         </div>
       </div>
-      <br>
 
       <!-- Tabla de Medidas -->
-      <div class="component-card">
-        <h3>Tabla de Medidas</h3>
-        <div class="component-preview">
+      <div class="step">
+        <h3>Paso 2: Tabla de Medidas</h3>
+        <div class="stepContent">
           <app-table 
             [data]="data" 
             [config]="tableConfig"
@@ -39,9 +99,9 @@
       </div>
 
       <!-- Consejos -->
-      <div class="component-card">
+      <div class="step">
         <h3>Consejos Importantes</h3>
-        <div class="component-preview">
+        <div class="stepContent">
           <app-tip>
             <p>Recuerda siempre verificar las medidas antes de cortar la tela.</p>
           </app-tip>
@@ -52,14 +112,14 @@
       </div>
 
       <!-- Lista de Moldes -->
-      <div class="component-card">
+      <div class="step">
         <h3>Ejemplos de Moldes</h3>
-        <div class="component-preview">
-          <div class="p-4">
-            <div *ngFor="let example of moldExamples" class="mb-4 p-3 border rounded">
-              <h4 class="font-bold">{{ example.title }}</h4>
+        <div class="stepContent">
+          <div class="examples-grid">
+            <div *ngFor="let example of moldExamples" class="example-card">
+              <h4>{{ example.title }}</h4>
               <p>{{ example.description }}</p>
-              <ul class="list-disc pl-5 mt-2">
+              <ul class="measurements-list">
                 <li *ngFor="let measure of example.measurements">
                   {{ measure.label }}: {{ measure.value }}cm
                 </li>

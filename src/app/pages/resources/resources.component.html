@@ -13,10 +13,46 @@
                         [accentColor]="basics.accentColor">
                     </app-desc-card>
                     <app-desc-card
-                        [title]="basics.title"
-                        [isList]="basics.isList"
-                        [items]="basics.items"
-                        [accentColor]="basics.accentColor">
+                        [title]="advanced.title"
+                        [isList]="advanced.isList"
+                        [items]="advanced.items"
+                        [accentColor]="advanced.accentColor">
+                    </app-desc-card>
+                </div>
+            </div>
+            
+            <!-- Sección de Materiales Necesarios -->
+            <div class="resource-card" style="margin-top: 2rem;">
+                <h2>Materiales de Estudio</h2>
+                <div class="resource-ticket">
+                    <app-desc-card
+                        [title]="books.title"
+                        [isList]="books.isList"
+                        [items]="books.items"
+                        [accentColor]="books.accentColor">
+                    </app-desc-card>
+                    <app-desc-card
+                        [title]="online.title"
+                        [isList]="online.isList"
+                        [items]="online.items"
+                        [accentColor]="online.accentColor">
+                    </app-desc-card>
+                </div>
+            </div>
+            <div class="resource-card" style="margin-top: 2rem;">
+                <h2>Proveedores Sugeridos</h2>
+                <div class="resource-ticket">
+                    <app-desc-card
+                        [title]="cloth.title"
+                        [isList]="cloth.isList"
+                        [items]="cloth.items"
+                        [accentColor]="cloth.accentColor">
+                    </app-desc-card>
+                    <app-desc-card
+                        [title]="tools.title"
+                        [isList]="tools.isList"
+                        [items]="tools.items"
+                        [accentColor]="tools.accentColor">
                     </app-desc-card>
                 </div>
             </div>

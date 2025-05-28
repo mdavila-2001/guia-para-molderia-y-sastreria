@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { BaseRectanglesComponent, RectangleDimensions } from '../../components/base-rectangles/base-rectangles.component';
 import { TableComponent, TableConfig } from '../../components/table/table.component';
 import { TipComponent } from '../../components/tip/tip.component';
 
@@ -11,7 +10,6 @@ import { TipComponent } from '../../components/tip/tip.component';
   imports: [
     CommonModule, 
     RouterModule, 
-    BaseRectanglesComponent,
     TableComponent,
     TipComponent
   ],
@@ -20,7 +18,7 @@ import { TipComponent } from '../../components/tip/tip.component';
 })
 export class BasePatternComponent {
   // Dimensiones para los rectángulos
-  frontRectangle: RectangleDimensions = {
+  frontRectangle = {
     width: 180,
     height: 300,
     verticalMeasure: '43cm',
@@ -28,7 +26,7 @@ export class BasePatternComponent {
     label: 'Delantero'
   };
 
-  backRectangle: RectangleDimensions = {
+  backRectangle = {
     width: 180,
     height: 290,
     verticalMeasure: '41cm',
