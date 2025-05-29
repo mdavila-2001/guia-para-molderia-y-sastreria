@@ -27,11 +27,6 @@ export const routes: Routes = [
     title: 'Recursos y Referencias'
   },
   {
-    path: 'molde-base',
-    loadComponent: () => import('./pages/base-pattern/base-pattern.component').then(m => m.BasePatternComponent),
-    title: 'Molde Base'
-  },
-  {
     path: 'contacts',
     loadComponent: () => import('./pages/contacts/contacts.component').then(m => m.ContactsComponent),
     title: 'Contacto'
