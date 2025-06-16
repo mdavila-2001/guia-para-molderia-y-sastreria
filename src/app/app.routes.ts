@@ -27,6 +27,11 @@ export const routes: Routes = [
     title: 'Recursos y Referencias'
   },
   {
+    path: 'patterns',
+    loadComponent: () => import('./pages/patterns/patterns.component').then(m => m.PatternsComponent),
+    title: 'Patrones de Costura'
+  },
+  {
     path: 'contacts',
     loadComponent: () => import('./pages/contacts/contacts.component').then(m => m.ContactsComponent),
     title: 'Contacto'

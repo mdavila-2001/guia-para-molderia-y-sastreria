@@ -1,0 +1,66 @@
+<div class="patterns-container">
+  <h1 class="page-title">{{ pageTitle }}</h1>
+  
+  <!-- Contenedor para cada patrón -->
+  <div *ngFor="let pattern of patterns" class="pattern-section">
+    <h2 class="pattern-section-title">{{ pattern.title }}</h2>
+    <p class="pattern-description">{{ pattern.description }}</p>
+    
+    <div class="pattern-cards-container">
+      <!-- Tarjeta de Medidas -->
+      <div class="pattern-card">
+        <div class="card-header">
+          <h3>Medidas Necesarias</h3>
+        </div>
+        <div class="card-content">
+          <ul class="measurements-list">
+            <li *ngFor="let measurement of pattern.measurements">
+              {{ measurement }}
+            </li>
+          </ul>
+          <div class="pattern-image">
+            <img [src]="pattern.images.measurements" [alt]="'Medidas de ' + pattern.title" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta de Pasos -->
+      <div class="pattern-card">
+        <div class="card-header">
+          <h3>Pasos de Construcción</h3>
+        </div>
+        <div class="card-content">
+          <ol class="construction-steps">
+            <li *ngFor="let step of pattern.steps">
+              <span class="step-number">{{ step.number }}</span>
+              <span class="step-description">{{ step.description }}</span>
+            </li>
+          </ol>
+          <div class="pattern-image">
+            <img [src]="pattern.images.steps" [alt]="'Pasos de ' + pattern.title" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta de Variaciones -->
+      <div class="pattern-card">
+        <div class="card-header">
+          <h3>Variaciones</h3>
+        </div>
+        <div class="card-content">
+          <div class="variations-container">
+            <div *ngFor="let variation of pattern.variations" class="variation-item">
+              <div class="variation-image">
+                <img [src]="variation.imageUrl" [alt]="'Variación ' + variation.name" loading="lazy">
+              </div>
+              <div class="variation-info">
+                <h4>{{ variation.name }}</h4>
+                <p>{{ variation.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
